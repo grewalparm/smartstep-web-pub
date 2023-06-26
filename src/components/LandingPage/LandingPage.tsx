@@ -23,7 +23,7 @@ const LandingPage = () => {
             <div className="pt-2 pb-5">
               <Link
                 to="/demo"
-                className="rounded-full bg-green-500 text-white px-6 py-3 shadow-lg shadow-green-700 w-40"
+                className="rounded-full bg-green-600 text-white px-6 py-3 shadow-lg shadow-green-500 w-40"
               >
                 Get Started
               </Link>
@@ -38,7 +38,7 @@ const LandingPage = () => {
             <div className="absolute top-0 right-0 p-6 bg-white rounded-bl-[2rem]">
               <Link
                 to="/demo"
-                className="rounded-full bg-blue-600 text-white px-6 py-3 shadow-md shadow-blue-700 w-40"
+                className="rounded-full bg-blue-700 text-white px-6 py-3 shadow-md shadow-blue-600 w-40"
               >
                 Get Started
               </Link>
