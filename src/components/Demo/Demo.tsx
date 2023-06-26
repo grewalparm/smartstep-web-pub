@@ -61,12 +61,13 @@ const Demo: React.FC = () => {
           content: chatCompletion["message"]["content"],
           color: "blue",
         };
-        setChatHistory([...chatHistory, chatResponse]);
+        setChatHistory((c) => [...c, chatResponse]);
       };
 
       sendMessage();
       setIsSendingMessage(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSendingMessage]);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -99,17 +100,18 @@ const Demo: React.FC = () => {
       }
     };
 
-    const question: Message = {
-      id: 0,
-      role: "assistant",
-      sender: "Dr. AI",
-      color: "blue",
-      content:
-        "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :).",
-    };
+    // const question: Message = {
+    //   id: 0,
+    //   role: "assistant",
+    //   sender: "Dr. AI",
+    //   color: "blue",
+    //   content:
+    //     "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :).",
+    // };
 
     fetchData();
     //setChatHistory([...chatHistory, question]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
