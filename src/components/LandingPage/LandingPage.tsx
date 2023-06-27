@@ -10,7 +10,7 @@ const LandingPage = () => {
           <div className="py-20">
             <Logo className="h-14 w-14" />
           </div>
-          <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 gap-20">
             <h1 className="text-6xl font-extrabold">
               An AI Tutor for the STEP Exam
             </h1>
@@ -18,7 +18,7 @@ const LandingPage = () => {
               Prepare for STEP exam success with an AI-powered study partner,
               providing personalized guidance and comprehensive support.
             </p>
-            <div className="pt-2 pb-5">
+            <div className="pt-2 pb-10">
               <Link
                 to="/demo"
                 className="rounded-full bg-green-600 text-white px-6 py-3 shadow-lg shadow-green-500 w-40"
@@ -30,10 +30,10 @@ const LandingPage = () => {
         </div>
         <div className="p-3 bg-white rounded-r-[2rem]">
           <div className="relative">
-            <div className="flex bg-blue-200 rounded-[2rem] p-10">
+            <div className="flex flex-auto bg-blue-200 rounded-[2rem] p-10">
               <Logo className="h-fit" />
             </div>
-            <div className="absolute top-0 right-0 p-6 bg-white rounded-bl-[2rem]">
+            <div className="absolute top-0 right-0 p-6 pb-8 bg-white rounded-bl-[2rem]">
               <Link
                 to="/demo"
                 className="rounded-full bg-blue-700 text-white px-6 py-3 shadow-md shadow-blue-600 w-40"

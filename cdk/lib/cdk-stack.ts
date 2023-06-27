@@ -1,6 +1,6 @@
 import {
   aws_route53 as route53,
-  aws_route53_targets,
+  aws_route53_targets as targets,
   aws_iam as iam,
   aws_s3 as s3,
   aws_cloudfront as cloudfront,
@@ -49,8 +49,23 @@ export class CdkStack extends Stack {
             behaviors: [{ isDefaultBehavior: true }],
           },
         ],
+        viewerCertificate: cloudfront.ViewerCertificate.fromAcmCertificate(
+          certificate, // 1
+          {
+            aliases: ["smartstepai.com"],
+            securityPolicy: cloudfront.SecurityPolicyProtocol.TLS_V1, // 2
+            sslMethod: cloudfront.SSLMethod.SNI, // 3
+          }
+        ),
       }
     );
+
+    new route53.ARecord(this, "Alias", {
+      zone: hostedZone,
+      target: route53.RecordTarget.fromAlias(
+        new targets.CloudFrontTarget(distribution)
+      ),
+    });
 
     bucket.grantRead(cloudFrontOAI.grantPrincipal);
   }
