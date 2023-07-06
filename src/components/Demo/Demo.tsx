@@ -9,7 +9,6 @@ import { getChatCompletion, getQuestion } from "../../api/openaiAPI";
 import { ChatCompletionMessage } from "../../types/types";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as SendIcon } from "../../images/send.svg";
-import { Link } from "react-router-dom";
 
 interface Message {
   id: number;
