@@ -106,17 +106,17 @@ const Demo: React.FC = () => {
       }
     };
 
-    // const question: Message = {
-    //   id: 0,
-    //   role: "assistant",
-    //   sender: "Dr. AI",
-    //   color: "blue",
-    //   content:
-    //     "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :).",
-    // };
+    const question: Message = {
+      id: 0,
+      role: "assistant",
+      sender: "Dr. AI",
+      color: "blue",
+      content:
+        "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :). Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg",
+    };
 
     fetchData();
-    //setChatHistory([...chatHistory, question]);
+    setChatHistory([...chatHistory, question]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -137,18 +137,18 @@ const Demo: React.FC = () => {
   }, [chatHistory, isLoading]);
 
   return (
-    <div className="flex flex-col max-h-screen h-screen items-start bg-gradient-to-t from-blue-200 to-blue-50 md:items-center">
+    <div className="flex flex-col items-start max-h-screen bg-gradient-to-t from-blue-200 to-blue-50 md:items-center">
       <div className="flex flex-row items-center justify-center p-3">
-        <Logo className="scale-x-[-1] h-8 w-8" />
+        <Logo className="h-8 w-8" />
         <div className="font-medium">SmartStepAI</div>
       </div>
-      <div className="flex flex-col w-full h-full md:w-1/2 bg-white shadow-lg md:rounded-[2rem] md:p-3">
+      <div className="flex flex-col w-full max-h-[calc(100vh-3.5rem)] bg-white shadow-lg md:rounded-[2rem] md:p-3 md:w-1/2">
         <h2 className="flex-none text-md font-semibold text-gray-800 p-3 md:p-5">
           Chatting with Dr. AI
         </h2>
         <div
           ref={chatContainerRef}
-          className="flex-grow overflow-auto bg-gray-100 rounded-[1.5rem] shadow-lg border border-gray-300 p-5"
+          className="flex-grow max-h-screen h-screen overflow-y-auto bg-gray-100 rounded-[1.5rem] shadow-lg border border-gray-300 p-5"
         >
           {chatHistory.map((message) => (
             <div
