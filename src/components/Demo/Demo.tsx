@@ -7,6 +7,9 @@ import React, {
 } from "react";
 import { getChatCompletion, getQuestion } from "../../api/openaiAPI";
 import { ChatCompletionMessage } from "../../types/types";
+import { ReactComponent as Logo } from "../../images/logo.svg";
+import { ReactComponent as SendIcon } from "../../images/send.svg";
+import { Link } from "react-router-dom";
 
 interface Message {
   id: number;
@@ -131,14 +134,18 @@ const Demo: React.FC = () => {
   }, [chatHistory, isLoading]);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-blue-200">
-      <div className=" w-1/2 bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">
+    <div className="flex flex-col max-h-screen h-screen items-start bg-gradient-to-t from-blue-200 to-blue-50 md:items-center">
+      <div className="flex flex-row items-center justify-center p-3">
+        <Logo className="scale-x-[-1] h-8 w-8" />
+        <div className="font-medium">SmartStepAI</div>
+      </div>
+      <div className="flex flex-col w-full h-full md:w-1/2 bg-white shadow-lg md:rounded-[2rem] md:p-3">
+        <h2 className="flex-none text-md font-semibold text-gray-800 p-3 md:p-5">
           Chatting with Dr. AI
         </h2>
         <div
           ref={chatContainerRef}
-          className="bg-gray-100 px-4 py-2 rounded-lg h-96 overflow-y-auto mb-4"
+          className="flex-grow bg-gray-100 rounded-[1.5rem] shadow-lg border border-gray-300 p-5"
         >
           {chatHistory.map((message) => (
             <div
@@ -188,22 +195,28 @@ const Demo: React.FC = () => {
             </div>
           )}
         </div>
-        <div className="flex">
+        <div className="flex border-gray-300 border rounded-full p-2 m-2">
           <input
             type="text"
-            className="flex-grow border-gray-300 border rounded-l-lg py-2 px-4 focus:outline-none"
+            className="flex-grow py-2 px-4 focus:outline-none"
             placeholder="Enter your message"
             value={message}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
           />
           <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-r-lg"
+            className="bg-blue-600 font-semibold py-2 px-4 rounded-full"
             onClick={sendMessage}
           >
-            Send
+            <SendIcon />
           </button>
         </div>
+        <Link
+          className="flex border-blue-500 border rounded-full p-2 m-2 text-blue-600 justify-center"
+          to={"/demo"}
+        >
+          Next Question
+        </Link>
       </div>
     </div>
   );
