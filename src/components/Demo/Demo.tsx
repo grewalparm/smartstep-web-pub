@@ -28,6 +28,10 @@ const Demo: React.FC = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const lastMessageRef = useRef<HTMLDivElement>(null);
 
+  const handleNextQuestion = () => {
+    window.location.reload();
+  };
+
   const sendMessage = () => {
     if (message.trim() !== "") {
       const newMessage: Message = {
@@ -145,7 +149,7 @@ const Demo: React.FC = () => {
         </h2>
         <div
           ref={chatContainerRef}
-          className="flex-grow bg-gray-100 rounded-[1.5rem] shadow-lg border border-gray-300 p-5"
+          className="flex-grow overflow-auto bg-gray-100 rounded-[1.5rem] shadow-lg border border-gray-300 p-5"
         >
           {chatHistory.map((message) => (
             <div
@@ -211,12 +215,12 @@ const Demo: React.FC = () => {
             <SendIcon />
           </button>
         </div>
-        <Link
-          className="flex border-blue-500 border rounded-full p-2 m-2 text-blue-600 justify-center"
-          to={"/demo"}
+        <button
+          className="flex border-blue-500 border rounded-full py-2 px-4 m-2 text-blue-600 justify-center"
+          onClick={handleNextQuestion}
         >
           Next Question
-        </Link>
+        </button>
       </div>
     </div>
   );
