@@ -106,17 +106,17 @@ const Demo: React.FC = () => {
       }
     };
 
-    const question: Message = {
-      id: 0,
-      role: "assistant",
-      sender: "Dr. AI",
-      color: "blue",
-      content:
-        "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :). Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg",
-    };
+    // const question: Message = {
+    //   id: 0,
+    //   role: "assistant",
+    //   sender: "Dr. AI",
+    //   color: "blue",
+    //   content:
+    //     "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :). Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg",
+    // };
 
     fetchData();
-    setChatHistory([...chatHistory, question]);
+    //setChatHistory([...chatHistory, question]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
