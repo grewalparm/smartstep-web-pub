@@ -4,7 +4,6 @@ import DesktopLandingPage from "../DesktopLandingPage/DesktopLandingPage";
 
 const LandingPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(true);
-  console.log("SMD LOSER landing");
 
   useEffect(() => {
     const handleResize = () => {
