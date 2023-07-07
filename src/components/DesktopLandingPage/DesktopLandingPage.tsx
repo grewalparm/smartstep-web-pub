@@ -4,7 +4,7 @@ import { ReactComponent as Logo } from "../../images/logo.svg";
 
 const DesktopLandingPage = () => {
   return (
-    <div className="flex h-screen bg-blue-200 p-[5rem]">
+    <div className="flex h-screen justify-center bg-blue-200 p-[5rem]">
       <div className="grid grid-cols-2">
         <div className="flex flex-col rounded-l-[2rem] bg-white pr-32 px-20">
           <div className="flex flex-row items-center text-xl py-20">
