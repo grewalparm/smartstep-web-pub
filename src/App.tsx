@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Demo from "./components/Demo/Demo";
+import SelectCategoryPage from "./components/SelectCategoryPage/SelectCategoryPage";
 
 function App(): JSX.Element {
   return (
@@ -11,7 +12,8 @@ function App(): JSX.Element {
         <Route path="/features" element={<LandingPage />} />
         <Route path="/pricing" element={<LandingPage />} />
         <Route path="/contact" element={<LandingPage />} />
-        <Route path="/demo" element={<Demo />} />
+        <Route path="/demo/:category" element={<Demo />} />
+        <Route path="/categories" element={<SelectCategoryPage />} />
       </Routes>
     </BrowserRouter>
   );
