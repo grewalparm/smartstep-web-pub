@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 
 const DesktopLandingPage = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="flex h-full justify-center bg-blue-200 p-[5rem]">
       <div className="grid grid-cols-2">
@@ -21,7 +23,7 @@ const DesktopLandingPage = () => {
             </p>
             <div className="py-20 pb-10">
               <Link
-                to="/demo"
+                to="/categories"
                 className="rounded-full bg-green-600 text-white px-6 py-3 shadow-lg shadow-green-500 w-40"
               >
                 Get Started

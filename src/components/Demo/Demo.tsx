@@ -5,10 +5,12 @@ import React, {
   ChangeEvent,
   KeyboardEvent,
 } from "react";
-import { getChatCompletion, getQuestion } from "../../api/openaiAPI";
+import { useParams } from "react-router-dom";
+import { getChatCompletion } from "../../api/openaiAPI";
 import { ChatCompletionMessage } from "../../types/types";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 import { ReactComponent as SendIcon } from "../../images/send.svg";
+import { formulateQuestionMessages } from "../../prompts/prompts";
 
 interface Message {
   id: number;
@@ -19,6 +21,8 @@ interface Message {
 }
 
 const Demo: React.FC = () => {
+  // TODO: create an interface for props object here
+  const { category } = useParams();
   const [chatHistory, setChatHistory] = useState<Message[]>([]);
   const [message, setMessage] = useState("");
   const [isSendingMessage, setIsSendingMessage] = useState(false);
@@ -90,7 +94,10 @@ const Demo: React.FC = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const questionContent = await getQuestion();
+        const messages = await formulateQuestionMessages(
+          category ? category : "Anatomy"
+        );
+        const questionContent = await getChatCompletion(messages);
         setIsLoading(false);
         const question: Message = {
           id: 0,
@@ -106,18 +113,18 @@ const Demo: React.FC = () => {
       }
     };
 
-    // const question: Message = {
-    //   id: 0,
-    //   role: "assistant",
-    //   sender: "Dr. AI",
-    //   color: "blue",
-    //   content:
-    //     "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :). Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg",
-    // };
+    const question: Message = {
+      id: 0,
+      role: "assistant",
+      sender: "Dr. AI",
+      color: "blue",
+      content:
+        "Hi there,\n this is an example question to make sure you don't charge too much to your card during testing purposes :). Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg Let's make the messages longggg",
+    };
 
     fetchData();
-    //setChatHistory([...chatHistory, question]);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    setChatHistory([...chatHistory, question]);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
