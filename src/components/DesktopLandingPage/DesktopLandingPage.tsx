@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../images/logo.svg";
 
 const DesktopLandingPage = () => {
-  const [showModal, setShowModal] = useState(false);
-
   return (
     <div className="flex h-full justify-center bg-blue-200 p-[5rem]">
       <div className="grid grid-cols-2">
