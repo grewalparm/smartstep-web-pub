@@ -38,7 +38,7 @@ const DesktopLandingPage = () => {
             </div>
             <div className="absolute top-0 right-0 p-6 pb-8 bg-white rounded-bl-[2rem]">
               <Link
-                to="/demo"
+                to="/categories"
                 className="rounded-full bg-blue-700 text-white px-6 py-3 shadow-md shadow-blue-600 w-40"
               >
                 Get Started
