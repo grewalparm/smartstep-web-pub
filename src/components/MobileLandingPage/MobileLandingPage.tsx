@@ -21,7 +21,7 @@ const MobileLandingPage: React.FC = () => {
       </p>
       <div className="px-5 py-5">
         <Link
-          to="/demo"
+          to="/categories"
           className="flex justify-center rounded-full bg-green-600 text-white px-6 py-2 shadow-md"
         >
           Get Started
